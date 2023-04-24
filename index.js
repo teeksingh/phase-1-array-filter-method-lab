@@ -7,7 +7,6 @@ function findMatching(drivers, nameValue){
             return true
         else
             return false
-    
     }
     
        return drivers.filter(compareName)
@@ -22,7 +21,10 @@ function fuzzyMatch(drivers, start) {
 
 }
 
-function matchName(drivers, string){
-    
+function matchName(drivers, nameValue){
+    const handleFilter = (drivers) => {
+        if (drivers.name === nameValue)
+            return true
+    }
+    return drivers.filter(handleFilter)
 }
-
